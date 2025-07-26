@@ -18,9 +18,9 @@ function App() {
 
   const getUser = async () => {
 
-    const apiUrl = await getApiUrl("https://main.d1lvj2mlqcwbpk.amplifyapp.com/");
+    const apiUrl = await getApiUrl("");
     await axios.get(apiUrl).then((response) => {
-      document.getElementById("message").innerHTML = response?.data?.message;
+      document.getElementById("message").innerHTML = message ? message : response?.data;
     }).catch((error) => {
       console.error("Error fetching users:", error);
     });
