@@ -6,7 +6,6 @@ import { endpoint, API_PATH } from './constant';
 
 function App() {
 
-
   // Helper to get full API URL
   const getApiUrl = async (path) => {
     if (path) {
@@ -19,7 +18,7 @@ function App() {
 
   const getUser = async () => {
 
-    const apiUrl = await getApiUrl("");
+    const apiUrl = await getApiUrl("https://main.d1lvj2mlqcwbpk.amplifyapp.com/");
     await axios.get(apiUrl).then((response) => {
       document.getElementById("message").innerHTML = response?.data?.message;
     }).catch((error) => {
